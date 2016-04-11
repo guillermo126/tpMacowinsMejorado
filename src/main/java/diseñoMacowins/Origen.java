@@ -1,4 +1,4 @@
-package diseÃ±oMacowins;
+package diseñoMacowins;
 
 public class Origen {
 	public static final boolean Nacional(){
@@ -6,5 +6,6 @@ public class Origen {
 	}
 	public static final boolean Internacional(){
 		return false;
-	}	
+		//No seria true?
+	}
 }

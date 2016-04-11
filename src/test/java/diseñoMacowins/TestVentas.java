@@ -1,4 +1,4 @@
-package diseÃ±oMacowins;
+package diseñoMacowins;
 
 import static org.junit.Assert.*;
 
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
+
 public class TestVentas {
 	ArrayList<Venta> ventas = new ArrayList<Venta>();
 	Negocio macowins = new Negocio(ventas);

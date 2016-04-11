@@ -1,4 +1,4 @@
-package diseÃ±oMacowins;
+package diseñoMacowins;
 
 import java.util.ArrayList;
 import java.util.stream.DoubleStream;
@@ -10,22 +10,24 @@ public class Negocio {
 		private ArrayList<Venta> ventas;
 		
 		// constructor
-		public Negocio(ArrayList<Venta> ventas2) {
-			this.ventas = ventas2;
+		public Negocio(ArrayList<Venta> unasVentas) {
+			this.ventas = unasVentas;
 		}
 		
 		//getters y setters
 		public ArrayList<Venta> getVentas() {
 			return ventas;
 		}
-		public void setVentas(ArrayList<Venta> ventas) {
-			this.ventas = ventas;
+		public void setVentas(ArrayList<Venta> unasVentas) {
+			this.ventas = unasVentas;
 		}
 		
 		public long cantidadVendidaEl(LocalDate fecha){
-			 Stream<Venta> ventasDelDia = ventas.stream().filter( v -> v.tieneIgualFechaQue(fecha));
+			Stream<Venta> ventasDelDia = ventas.stream().filter( v -> v.tieneIgualFechaQue(fecha));
+			//Stream<Venta> ventasDelDiaOtraOpcion = ventas.stream().filter(unaVenta -> unaVenta.equals(fecha));
+			
 			return  ventasDelDia.count();
-		
+			//return  ventasDelDiaOtraOpcion.count();
 		}
 		
 		public double gananciaTotalEl(LocalDate fecha){

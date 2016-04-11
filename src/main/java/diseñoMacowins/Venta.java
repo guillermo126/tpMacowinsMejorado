@@ -1,19 +1,19 @@
-package diseÃ±oMacowins;
+package diseñoMacowins;
 
 import java.time.LocalDate;
 
 public class Venta {
 	//atributos
 	private Prenda tipoPrenda;
-	private LocalDate fecha;
+	private LocalDate fechaDeVenta;
 
 	//construtor
-	public Venta(Prenda tp, LocalDate dia){
-		this.tipoPrenda= tp;
-		this.fecha= dia;
+	public Venta(Prenda unTipoDePrenda, LocalDate unaFecha){
+		this.tipoPrenda= unTipoDePrenda;
+		this.fechaDeVenta= unaFecha;
 	}
 	
-		//getters y setters
+	//getters y setters
 	public Prenda getTipoPrenda() {
 		return tipoPrenda;
 	}
@@ -21,15 +21,14 @@ public class Venta {
 		this.tipoPrenda = tipoPrenda;
 	}
 	public LocalDate getFecha() {
-		return fecha;
+		return fechaDeVenta;
 	}
-	public void setFecha(LocalDate fecha) {
-		this.fecha = fecha;
+	public void setFecha(LocalDate unaFecha) {
+		this.fechaDeVenta = unaFecha;
 	}
 	
-	
-	public boolean tieneIgualFechaQue(LocalDate f){
-		return fecha.isEqual(f);
+	public boolean tieneIgualFechaQue(LocalDate unaFecha){
+		return fechaDeVenta.isEqual(unaFecha);
 	}
 	
 	public double gananciasXVentas(){

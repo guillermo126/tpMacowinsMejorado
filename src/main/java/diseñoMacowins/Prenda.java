@@ -1,4 +1,4 @@
-package diseÃ±oMacowins;
+package diseñoMacowins;
 
 public abstract class Prenda {
 	//atributos
@@ -6,9 +6,10 @@ public abstract class Prenda {
 		protected double tasaImportacion;
 	
 		//constructor
-		public Prenda(int precio,boolean cp){
-			this.precioBase = precio;
-			if(cp){
+		public Prenda(int unPrecio,boolean origenDeLaPrenda){
+			this.precioBase = unPrecio;
+			
+			if(origenDeLaPrenda){
 				this.tasaImportacion=1;
 			}else{
 				this.tasaImportacion=0.3;

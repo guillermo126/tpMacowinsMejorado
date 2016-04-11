@@ -1,9 +1,9 @@
-package diseÃ±oMacowins;
+package diseñoMacowins;
 
 public class Camisa extends Prenda {
 	//constructor
-	public Camisa( int precio, boolean cp){
-		super( precio, cp);
+	public Camisa(int unPrecio, boolean origenDeLaPrenda){
+		super(unPrecio, origenDeLaPrenda);
 	}
 
 }
