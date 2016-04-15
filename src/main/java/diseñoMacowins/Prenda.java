@@ -1,34 +1,39 @@
 package diseñoMacowins;
 
+import java.math.BigDecimal;
+
 public abstract class Prenda {
 	
 	//Atributos
-	protected int precioBase;
-	protected double tasaImportacion;
+	private BigDecimal precioBase;
+	private BigDecimal tasaImportacion;
 	private Marca marca;
 	
 	//Constructor
-	public Prenda(int unPrecio,boolean origenDeLaPrenda){
+	public Prenda(BigDecimal unPrecio, boolean origenDeLaPrenda, Marca unaMarca){
 		
 		this.precioBase = unPrecio;
-			
+		this.marca = unaMarca;
+		
 		if(origenDeLaPrenda){
-			this.tasaImportacion=1;
+			this.tasaImportacion = BigDecimal.ZERO;
 		}else{
-			this.tasaImportacion=0.3;
+			this.tasaImportacion = BigDecimal.valueOf(0.3);
 		}
 	}
 	
 	//Metodos
-	public double precioFinal() {
+	public BigDecimal precioFinal() {
 		
-		return this.precioOriginal() * this.tasaImportacion * this.marca.coeficienteMarca(this.precioOriginal());
+		return this.precioOriginal()
+				.add(this.marca.coeficienteMarca(this.precioOriginal()))
+				.add(this.precioOriginal().multiply(this.tasaImportacion));
 	
 	}
 	
-	public double precioOriginal(){
+	public BigDecimal precioOriginal(){
 		
-		return Precios.VALORFIJO_NEGOCIO + this.precioBase;
+		return this.precioBase.add(Precios.VALORFIJO_NEGOCIO);
 		
 	}
 

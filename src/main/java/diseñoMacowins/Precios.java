@@ -4,16 +4,14 @@ import java.math.BigDecimal;
 
 public class Precios {
 	
-	public static final int PRECIO_PANTALON=250;
-	public static final int PRECIO_SACO=300;
-	public static final int PRECIO_CAMISA=200;
-	public static final int VALORFIJO_NEGOCIO=50;
-	//El valor fijo lo tendria que saber la prenda. Para darle mas sentido al ejercicio.
+	public static final BigDecimal PRECIO_PANTALON = BigDecimal.valueOf(250);
+	public static final BigDecimal PRECIO_SACO = BigDecimal.valueOf(300);
+	public static final BigDecimal PRECIO_CAMISA = BigDecimal.valueOf(200);
+	public static final BigDecimal VALORFIJO_NEGOCIO = BigDecimal.valueOf(50);
+	public static final BigDecimal PRECIO_ZAPATO = BigDecimal.valueOf(400);
+	public static final BigDecimal PRECIO_SOMBRERO = BigDecimal.valueOf(150);
 	
-	public static final int PRECIO_ZAPATO=400;
-	public static final int PRECIO_SOMBRERO=150;
-	
-	/*
+	/* Otra idea:
 	Capaz podriamos hacerlo con enum, para no tener una clase sin comportamiento.
 	
 	ejemplo:

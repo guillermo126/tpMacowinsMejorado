@@ -1,8 +1,13 @@
 package diseñoMacowins;
 
+import java.math.BigDecimal;
+
 public class Zapato extends Prenda {
-	//constructor
-	public Zapato(int unTalle, boolean origenDeLaPrenda){
-		super(Precios.PRECIO_ZAPATO + 5*unTalle, origenDeLaPrenda);
+	
+	//Constructor
+	public Zapato(int unTalle, boolean origenDeLaPrenda, Marca unaMarca){
+		
+		super(Precios.PRECIO_ZAPATO.add(BigDecimal.valueOf(5 * unTalle)), origenDeLaPrenda, unaMarca);
+	
 	}
 }

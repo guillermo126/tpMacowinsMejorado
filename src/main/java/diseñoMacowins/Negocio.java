@@ -6,37 +6,42 @@ import java.util.stream.Stream;
 import java.time.LocalDate;
 
 public class Negocio {
-	//atributos
-		private ArrayList<Venta> ventas;
-		
-		// constructor
-		public Negocio(ArrayList<Venta> unasVentas) {
-			this.ventas = unasVentas;
-		}
-		
-		//getters y setters
-		public ArrayList<Venta> getVentas() {
-			return ventas;
-		}
-		public void setVentas(ArrayList<Venta> unasVentas) {
-			this.ventas = unasVentas;
-		}
-		
-		public long cantidadVendidaEl(LocalDate fecha){
-			Stream<Venta> ventasDelDia = ventas.stream().filter( v -> v.tieneIgualFechaQue(fecha));
-			//Stream<Venta> ventasDelDiaOtraOpcion = ventas.stream().filter(unaVenta -> unaVenta.equals(fecha));
-			
-			return  ventasDelDia.count();
-			//return  ventasDelDiaOtraOpcion.count();
-		}
-		
-		public double gananciaTotalEl(LocalDate fecha){
 	
-			Stream<Venta> v1 = ventas.stream().filter( v -> v.getFecha() == fecha);
-			DoubleStream  a= v1.mapToDouble(venta -> venta.gananciasXVentas());
-			//.stream().mapToDouble(venta -> venta.gananciasXVentas()).sum()
-			return a.sum();
+	//Atributos
+	private ArrayList<Venta> ventas;
 		
-		}
+	//Constructor
+	public Negocio(ArrayList<Venta> unasVentas) {
+		this.setVentas(unasVentas);
+	}
+		
+	//Getters
+	public ArrayList<Venta> getVentas() {
+		return ventas;
+	}
+	
+	//Setters
+	public void setVentas(ArrayList<Venta> unasVentas) {
+		this.ventas = unasVentas;
+	}
+		
+	//Metodos
+	public long cantidadVendidaEl(LocalDate unaFecha){
+		
+		Stream<Venta> ventasDelDia = ventas.stream().filter(unaVenta -> unaVenta.getFecha().equals(unaFecha));
+			
+		return  ventasDelDia.count();
+
+	}
+		
+	public double gananciaTotalEl(LocalDate unaFecha){
+	
+		Stream<Venta> ventasDeLaFecha = ventas.stream().filter(unaVenta -> unaVenta.getFecha().equals(unaFecha));
+		
+		DoubleStream listaDeGanancias = ventasDeLaFecha.mapToDouble(unaVenta -> unaVenta.getTipoPrenda().precioFinal().doubleValue());
+		
+		return listaDeGanancias.sum();
+		
+	}
 
 }

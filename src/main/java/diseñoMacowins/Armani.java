@@ -1,12 +1,14 @@
 package diseñoMacowins;
 
+import java.math.BigDecimal;
+
 public class Armani implements Marca{
 
 	//Metodos
 	@Override
-	public double coeficienteMarca(double unPrecioOriginal) {
+	public BigDecimal coeficienteMarca(BigDecimal unPrecioOriginal) {
 		
-		return unPrecioOriginal*0.65;
+		return unPrecioOriginal.multiply(BigDecimal.valueOf(0.65));
 		
 	}
 

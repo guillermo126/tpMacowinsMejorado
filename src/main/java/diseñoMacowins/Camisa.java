@@ -1,9 +1,14 @@
 package diseñoMacowins;
 
+import java.math.BigDecimal;
+
 public class Camisa extends Prenda {
-	//constructor
-	public Camisa(int unPrecio, boolean origenDeLaPrenda){
-		super(unPrecio, origenDeLaPrenda);
+	
+	//Constructor
+	public Camisa(BigDecimal unPrecio, boolean origenDeLaPrenda, Marca unaMarca){
+		
+		super(unPrecio, origenDeLaPrenda, unaMarca);
+	
 	}
 
 }

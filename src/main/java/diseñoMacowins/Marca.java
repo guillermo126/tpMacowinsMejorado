@@ -1,8 +1,10 @@
 package diseñoMacowins;
 
+import java.math.BigDecimal;
+
 public interface Marca {
 	
 	//Metodos Abstractos
-	public abstract double coeficienteMarca(double unPrecioOriginal);
+	public abstract BigDecimal coeficienteMarca(BigDecimal unPrecioOriginal);
 	
 }

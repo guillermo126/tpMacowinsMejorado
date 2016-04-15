@@ -1,20 +1,22 @@
 package diseñoMacowins;
 
+import java.math.BigDecimal;
+
 public class Sarkany implements Marca{
 
 	//Metodos
 	@Override
-	public double coeficienteMarca(double unPrecioOriginal){
+	public BigDecimal coeficienteMarca(BigDecimal unPrecioOriginal){
 		
-		if(unPrecioOriginal > 500){
+		if(unPrecioOriginal.doubleValue() > 500){
 			
-			return unPrecioOriginal*0.35;
+			return unPrecioOriginal.multiply(BigDecimal.valueOf(0.35));
 			
 		}
 		
 		else{
 			
-			return unPrecioOriginal*0.10;
+			return unPrecioOriginal.multiply(BigDecimal.valueOf(0.10));
 			
 		}
 		
